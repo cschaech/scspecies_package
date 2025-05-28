@@ -1,0 +1,38 @@
+[project]
+name = "scspecies"
+version = "0.1.0"
+description = "scspecies allows users to align latent representations of single-cell datasets from different species."
+authors = [
+    {name = "Clemens Schächter"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "torch (>=2.7.0,<3.0.0)",      
+    "muon (>=0.1.7,<0.2.0)",
+    "scipy (>=1.15.3,<2.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)",
+    "h5py (>=3.13.0,<4.0.0)",
+    "gseapy (>=1.1.8,<4.0.0)",
+    "mygene (>=3.2.2,<4.0.0)",
+]
+
+
+[project.optional-dependencies]
+plotting = ["seaborn (>=0.13.2,<1.0.0)", "glasbey (>=0.2.1,<1.0.0)", "matplotlib (>=3.10.1,<4.0.0)"]
+notebooks = ["ipywidgets (>=8.1.7,<9.0.0)", "ipykernel (>=6.29.5,<7.0.0)", "tqdm (>=4.67.1, <5.0.0)", "jupyter (>=1.1.1, <2.0.0)"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.setuptools.packages.find]
+include = ["scspecies*"]
+exclude = [
+  "docs*",
+  "tests*",
+  "scspecies.egg-info*",
+]

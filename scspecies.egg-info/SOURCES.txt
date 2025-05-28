@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+scSpecies/__init__.py
+scSpecies/models.py
+scSpecies/preprocessing.py
+scSpecies.egg-info/PKG-INFO
+scSpecies.egg-info/SOURCES.txt
+scSpecies.egg-info/dependency_links.txt
+scSpecies.egg-info/requires.txt
+scSpecies.egg-info/top_level.txt

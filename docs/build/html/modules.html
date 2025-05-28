@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scpecies_package &mdash; scspecies Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/thebelab-helper.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            scspecies
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Navigation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips to fit scSpecies</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">scspecies</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">scpecies_package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scpecies-package">
+<h1>scpecies_package<a class="headerlink" href="#scpecies-package" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scspecies.html">scspecies package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scspecies.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scspecies.html#module-scspecies.models">scspecies.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder"><code class="docutils literal notranslate"><span class="pre">Decoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.model"><code class="docutils literal notranslate"><span class="pre">Decoder.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.rho_pre"><code class="docutils literal notranslate"><span class="pre">Decoder.rho_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.log_alpha"><code class="docutils literal notranslate"><span class="pre">Decoder.log_alpha</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.pi_nlogit"><code class="docutils literal notranslate"><span class="pre">Decoder.pi_nlogit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.T_destination"><code class="docutils literal notranslate"><span class="pre">Decoder.T_destination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.__init__"><code class="docutils literal notranslate"><span class="pre">Decoder.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.add_module"><code class="docutils literal notranslate"><span class="pre">Decoder.add_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.apply"><code class="docutils literal notranslate"><span class="pre">Decoder.apply()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.bfloat16"><code class="docutils literal notranslate"><span class="pre">Decoder.bfloat16()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.buffers"><code class="docutils literal notranslate"><span class="pre">Decoder.buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.calc_nlog_likelihood"><code class="docutils literal notranslate"><span class="pre">Decoder.calc_nlog_likelihood()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.call_super_init"><code class="docutils literal notranslate"><span class="pre">Decoder.call_super_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.children"><code class="docutils literal notranslate"><span class="pre">Decoder.children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.compile"><code class="docutils literal notranslate"><span class="pre">Decoder.compile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.cpu"><code class="docutils literal notranslate"><span class="pre">Decoder.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.cuda"><code class="docutils literal notranslate"><span class="pre">Decoder.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.decode"><code class="docutils literal notranslate"><span class="pre">Decoder.decode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.decode_homologous"><code class="docutils literal notranslate"><span class="pre">Decoder.decode_homologous()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.double"><code class="docutils literal notranslate"><span class="pre">Decoder.double()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.dump_patches"><code class="docutils literal notranslate"><span class="pre">Decoder.dump_patches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.eval"><code class="docutils literal notranslate"><span class="pre">Decoder.eval()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.extra_repr"><code class="docutils literal notranslate"><span class="pre">Decoder.extra_repr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.float"><code class="docutils literal notranslate"><span class="pre">Decoder.float()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.forward"><code class="docutils literal notranslate"><span class="pre">Decoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.get_buffer"><code class="docutils literal notranslate"><span class="pre">Decoder.get_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.get_extra_state"><code class="docutils literal notranslate"><span class="pre">Decoder.get_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.get_parameter"><code class="docutils literal notranslate"><span class="pre">Decoder.get_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.get_submodule"><code class="docutils literal notranslate"><span class="pre">Decoder.get_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.half"><code class="docutils literal notranslate"><span class="pre">Decoder.half()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.ipu"><code class="docutils literal notranslate"><span class="pre">Decoder.ipu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.load_state_dict"><code class="docutils literal notranslate"><span class="pre">Decoder.load_state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.modules"><code class="docutils literal notranslate"><span class="pre">Decoder.modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.mtia"><code class="docutils literal notranslate"><span class="pre">Decoder.mtia()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.named_buffers"><code class="docutils literal notranslate"><span class="pre">Decoder.named_buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.named_children"><code class="docutils literal notranslate"><span class="pre">Decoder.named_children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.named_modules"><code class="docutils literal notranslate"><span class="pre">Decoder.named_modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.named_parameters"><code class="docutils literal notranslate"><span class="pre">Decoder.named_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.parameters"><code class="docutils literal notranslate"><span class="pre">Decoder.parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_backward_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_buffer"><code class="docutils literal notranslate"><span class="pre">Decoder.register_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_forward_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_forward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_forward_pre_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_forward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_full_backward_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_full_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_full_backward_pre_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_full_backward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_load_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_load_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_load_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_load_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_module"><code class="docutils literal notranslate"><span class="pre">Decoder.register_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_parameter"><code class="docutils literal notranslate"><span class="pre">Decoder.register_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.register_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">Decoder.register_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.requires_grad_"><code class="docutils literal notranslate"><span class="pre">Decoder.requires_grad_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.set_extra_state"><code class="docutils literal notranslate"><span class="pre">Decoder.set_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.set_submodule"><code class="docutils literal notranslate"><span class="pre">Decoder.set_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.share_memory"><code class="docutils literal notranslate"><span class="pre">Decoder.share_memory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.state_dict"><code class="docutils literal notranslate"><span class="pre">Decoder.state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.to"><code class="docutils literal notranslate"><span class="pre">Decoder.to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.to_empty"><code class="docutils literal notranslate"><span class="pre">Decoder.to_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.train"><code class="docutils literal notranslate"><span class="pre">Decoder.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.training"><code class="docutils literal notranslate"><span class="pre">Decoder.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.type"><code class="docutils literal notranslate"><span class="pre">Decoder.type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.xpu"><code class="docutils literal notranslate"><span class="pre">Decoder.xpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Decoder.zero_grad"><code class="docutils literal notranslate"><span class="pre">Decoder.zero_grad()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner"><code class="docutils literal notranslate"><span class="pre">Encoder_inner</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.model"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.mu"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.mu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.log_sig"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.log_sig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.sampling_dist"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.sampling_dist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.T_destination"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.T_destination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.__init__"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.add_module"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.add_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.apply"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.apply()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.bfloat16"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.bfloat16()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.buffers"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.call_super_init"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.call_super_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.children"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.compile"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.compile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.cpu"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.cuda"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.double"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.double()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.dump_patches"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.dump_patches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.encode"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.encode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.eval"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.eval()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.extra_repr"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.extra_repr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.float"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.float()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.forward"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.get_buffer"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.get_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.get_extra_state"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.get_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.get_parameter"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.get_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.get_submodule"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.get_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.half"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.half()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.ipu"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.ipu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.load_state_dict"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.load_state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.modules"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.mtia"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.mtia()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.named_buffers"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.named_buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.named_children"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.named_children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.named_modules"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.named_modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.named_parameters"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.named_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.parameters"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_backward_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_buffer"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_forward_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_forward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_forward_pre_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_forward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_full_backward_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_full_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_full_backward_pre_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_full_backward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_load_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_load_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_load_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_load_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_module"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_parameter"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.register_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.register_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.requires_grad_"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.requires_grad_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.set_extra_state"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.set_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.set_submodule"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.set_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.share_memory"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.share_memory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.state_dict"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.to"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.to_empty"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.to_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.train"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.training"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.type"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.xpu"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.xpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_inner.zero_grad"><code class="docutils literal notranslate"><span class="pre">Encoder_inner.zero_grad()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer"><code class="docutils literal notranslate"><span class="pre">Encoder_outer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.model"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.T_destination"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.T_destination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.__init__"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.add_module"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.add_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.apply"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.apply()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.bfloat16"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.bfloat16()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.buffers"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.call_super_init"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.call_super_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.children"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.compile"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.compile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.cpu"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.cuda"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.double"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.double()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.dump_patches"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.dump_patches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.eval"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.eval()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.extra_repr"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.extra_repr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.float"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.float()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.forward"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.get_buffer"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.get_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.get_extra_state"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.get_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.get_parameter"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.get_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.get_submodule"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.get_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.half"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.half()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.ipu"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.ipu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.load_state_dict"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.load_state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.modules"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.mtia"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.mtia()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.named_buffers"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.named_buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.named_children"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.named_children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.named_modules"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.named_modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.named_parameters"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.named_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.parameters"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_backward_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_buffer"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_forward_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_forward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_forward_pre_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_forward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_full_backward_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_full_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_full_backward_pre_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_full_backward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_load_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_load_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_load_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_load_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_module"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_parameter"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.register_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.register_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.requires_grad_"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.requires_grad_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.set_extra_state"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.set_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.set_submodule"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.set_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.share_memory"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.share_memory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.state_dict"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.to"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.to_empty"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.to_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.train"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.training"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.type"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.xpu"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.xpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Encoder_outer.zero_grad"><code class="docutils literal notranslate"><span class="pre">Encoder_outer.zero_grad()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder"><code class="docutils literal notranslate"><span class="pre">Library_encoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.model"><code class="docutils literal notranslate"><span class="pre">Library_encoder.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.mu"><code class="docutils literal notranslate"><span class="pre">Library_encoder.mu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.log_sig"><code class="docutils literal notranslate"><span class="pre">Library_encoder.log_sig</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.sampling_dist"><code class="docutils literal notranslate"><span class="pre">Library_encoder.sampling_dist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.mu_add"><code class="docutils literal notranslate"><span class="pre">Library_encoder.mu_add</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.T_destination"><code class="docutils literal notranslate"><span class="pre">Library_encoder.T_destination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.__init__"><code class="docutils literal notranslate"><span class="pre">Library_encoder.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.add_module"><code class="docutils literal notranslate"><span class="pre">Library_encoder.add_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.apply"><code class="docutils literal notranslate"><span class="pre">Library_encoder.apply()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.bfloat16"><code class="docutils literal notranslate"><span class="pre">Library_encoder.bfloat16()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.buffers"><code class="docutils literal notranslate"><span class="pre">Library_encoder.buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.call_super_init"><code class="docutils literal notranslate"><span class="pre">Library_encoder.call_super_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.children"><code class="docutils literal notranslate"><span class="pre">Library_encoder.children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.compile"><code class="docutils literal notranslate"><span class="pre">Library_encoder.compile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.cpu"><code class="docutils literal notranslate"><span class="pre">Library_encoder.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.cuda"><code class="docutils literal notranslate"><span class="pre">Library_encoder.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.double"><code class="docutils literal notranslate"><span class="pre">Library_encoder.double()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.dump_patches"><code class="docutils literal notranslate"><span class="pre">Library_encoder.dump_patches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.encode"><code class="docutils literal notranslate"><span class="pre">Library_encoder.encode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.eval"><code class="docutils literal notranslate"><span class="pre">Library_encoder.eval()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.extra_repr"><code class="docutils literal notranslate"><span class="pre">Library_encoder.extra_repr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.float"><code class="docutils literal notranslate"><span class="pre">Library_encoder.float()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.forward"><code class="docutils literal notranslate"><span class="pre">Library_encoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.get_buffer"><code class="docutils literal notranslate"><span class="pre">Library_encoder.get_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.get_extra_state"><code class="docutils literal notranslate"><span class="pre">Library_encoder.get_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.get_parameter"><code class="docutils literal notranslate"><span class="pre">Library_encoder.get_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.get_submodule"><code class="docutils literal notranslate"><span class="pre">Library_encoder.get_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.half"><code class="docutils literal notranslate"><span class="pre">Library_encoder.half()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.ipu"><code class="docutils literal notranslate"><span class="pre">Library_encoder.ipu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.load_state_dict"><code class="docutils literal notranslate"><span class="pre">Library_encoder.load_state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.modules"><code class="docutils literal notranslate"><span class="pre">Library_encoder.modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.mtia"><code class="docutils literal notranslate"><span class="pre">Library_encoder.mtia()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.named_buffers"><code class="docutils literal notranslate"><span class="pre">Library_encoder.named_buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.named_children"><code class="docutils literal notranslate"><span class="pre">Library_encoder.named_children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.named_modules"><code class="docutils literal notranslate"><span class="pre">Library_encoder.named_modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.named_parameters"><code class="docutils literal notranslate"><span class="pre">Library_encoder.named_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.parameters"><code class="docutils literal notranslate"><span class="pre">Library_encoder.parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_backward_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_buffer"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_forward_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_forward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_forward_pre_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_forward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_full_backward_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_full_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_full_backward_pre_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_full_backward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_load_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_load_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_load_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_load_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_module"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_parameter"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.register_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">Library_encoder.register_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.requires_grad_"><code class="docutils literal notranslate"><span class="pre">Library_encoder.requires_grad_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.set_extra_state"><code class="docutils literal notranslate"><span class="pre">Library_encoder.set_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.set_submodule"><code class="docutils literal notranslate"><span class="pre">Library_encoder.set_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.share_memory"><code class="docutils literal notranslate"><span class="pre">Library_encoder.share_memory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.state_dict"><code class="docutils literal notranslate"><span class="pre">Library_encoder.state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.to"><code class="docutils literal notranslate"><span class="pre">Library_encoder.to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.to_empty"><code class="docutils literal notranslate"><span class="pre">Library_encoder.to_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.train"><code class="docutils literal notranslate"><span class="pre">Library_encoder.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.training"><code class="docutils literal notranslate"><span class="pre">Library_encoder.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.type"><code class="docutils literal notranslate"><span class="pre">Library_encoder.type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.xpu"><code class="docutils literal notranslate"><span class="pre">Library_encoder.xpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Library_encoder.zero_grad"><code class="docutils literal notranslate"><span class="pre">Library_encoder.zero_grad()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.Progress_Bar"><code class="docutils literal notranslate"><span class="pre">Progress_Bar</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Progress_Bar.__init__"><code class="docutils literal notranslate"><span class="pre">Progress_Bar.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Progress_Bar.format_number"><code class="docutils literal notranslate"><span class="pre">Progress_Bar.format_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Progress_Bar.ret_sign"><code class="docutils literal notranslate"><span class="pre">Progress_Bar.ret_sign()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.Progress_Bar.update"><code class="docutils literal notranslate"><span class="pre">Progress_Bar.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.color_str"><code class="docutils literal notranslate"><span class="pre">color_str()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.create_structure"><code class="docutils literal notranslate"><span class="pre">create_structure()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded"><code class="docutils literal notranslate"><span class="pre">make_act_bounded</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.T_destination"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.T_destination</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.__init__"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.add_module"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.add_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.apply"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.apply()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.bfloat16"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.bfloat16()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.buffers"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.call_super_init"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.call_super_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.children"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.compile"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.compile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.cpu"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.cpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.cuda"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.cuda()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.double"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.double()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.dump_patches"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.dump_patches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.eval"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.eval()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.extra_repr"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.extra_repr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.float"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.float()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.forward"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.get_buffer"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.get_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.get_extra_state"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.get_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.get_parameter"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.get_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.get_submodule"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.get_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.half"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.half()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.ipu"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.ipu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.load_state_dict"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.load_state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.modules"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.mtia"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.mtia()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.named_buffers"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.named_buffers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.named_children"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.named_children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.named_modules"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.named_modules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.named_parameters"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.named_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.parameters"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_backward_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_buffer"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_forward_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_forward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_forward_pre_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_forward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_full_backward_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_full_backward_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_full_backward_pre_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_full_backward_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_load_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_load_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_load_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_load_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_module"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_module()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_parameter"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_parameter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_state_dict_post_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_state_dict_post_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.register_state_dict_pre_hook"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.register_state_dict_pre_hook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.requires_grad_"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.requires_grad_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.set_extra_state"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.set_extra_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.set_submodule"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.set_submodule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.share_memory"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.share_memory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.state_dict"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.state_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.to"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.to_empty"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.to_empty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.train"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.training"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.type"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.xpu"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.xpu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.make_act_bounded.zero_grad"><code class="docutils literal notranslate"><span class="pre">make_act_bounded.zero_grad()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.neighbors_workaround"><code class="docutils literal notranslate"><span class="pre">neighbors_workaround()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies"><code class="docutils literal notranslate"><span class="pre">scSpecies</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.__init__"><code class="docutils literal notranslate"><span class="pre">scSpecies.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.average_slices"><code class="docutils literal notranslate"><span class="pre">scSpecies.average_slices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.compute_logfold_change"><code class="docutils literal notranslate"><span class="pre">scSpecies.compute_logfold_change()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.create_directory"><code class="docutils literal notranslate"><span class="pre">scSpecies.create_directory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.encode"><code class="docutils literal notranslate"><span class="pre">scSpecies.encode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.filter_outliers"><code class="docutils literal notranslate"><span class="pre">scSpecies.filter_outliers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.generate_homologous_samples"><code class="docutils literal notranslate"><span class="pre">scSpecies.generate_homologous_samples()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.get_batch"><code class="docutils literal notranslate"><span class="pre">scSpecies.get_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.get_representation"><code class="docutils literal notranslate"><span class="pre">scSpecies.get_representation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.hmu"><code class="docutils literal notranslate"><span class="pre">scSpecies.hmu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.initialize"><code class="docutils literal notranslate"><span class="pre">scSpecies.initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.label_transfer"><code class="docutils literal notranslate"><span class="pre">scSpecies.label_transfer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.load"><code class="docutils literal notranslate"><span class="pre">scSpecies.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.mode_histogram"><code class="docutils literal notranslate"><span class="pre">scSpecies.mode_histogram()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.most_frequent"><code class="docutils literal notranslate"><span class="pre">scSpecies.most_frequent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.opt"><code class="docutils literal notranslate"><span class="pre">scSpecies.opt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.pkl"><code class="docutils literal notranslate"><span class="pre">scSpecies.pkl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.pth"><code class="docutils literal notranslate"><span class="pre">scSpecies.pth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.ret_pred_df"><code class="docutils literal notranslate"><span class="pre">scSpecies.ret_pred_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.return_similarity_df"><code class="docutils literal notranslate"><span class="pre">scSpecies.return_similarity_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.save"><code class="docutils literal notranslate"><span class="pre">scSpecies.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.save_mdata"><code class="docutils literal notranslate"><span class="pre">scSpecies.save_mdata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.similarity_metric"><code class="docutils literal notranslate"><span class="pre">scSpecies.similarity_metric()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.similarity_metric_on_latent_space"><code class="docutils literal notranslate"><span class="pre">scSpecies.similarity_metric_on_latent_space()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.train_context"><code class="docutils literal notranslate"><span class="pre">scSpecies.train_context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.train_target"><code class="docutils literal notranslate"><span class="pre">scSpecies.train_target()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.transfer_info"><code class="docutils literal notranslate"><span class="pre">scSpecies.transfer_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.models.scSpecies.update_param"><code class="docutils literal notranslate"><span class="pre">scSpecies.update_param()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scspecies.html#module-scspecies.plot">scspecies.plot module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.is_bright"><code class="docutils literal notranslate"><span class="pre">is_bright()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.label_transfer_acc"><code class="docutils literal notranslate"><span class="pre">label_transfer_acc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.load_and_filter_pathways"><code class="docutils literal notranslate"><span class="pre">load_and_filter_pathways()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.plot_2D_representation"><code class="docutils literal notranslate"><span class="pre">plot_2D_representation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.plot_lfc"><code class="docutils literal notranslate"><span class="pre">plot_lfc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.plot_lfc_comparison"><code class="docutils literal notranslate"><span class="pre">plot_lfc_comparison()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.plot_prototype_sim_heatmap"><code class="docutils literal notranslate"><span class="pre">plot_prototype_sim_heatmap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.plot_similarity"><code class="docutils literal notranslate"><span class="pre">plot_similarity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.progressive_moving_average"><code class="docutils literal notranslate"><span class="pre">progressive_moving_average()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.ret_sign"><code class="docutils literal notranslate"><span class="pre">ret_sign()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.plot.return_palette"><code class="docutils literal notranslate"><span class="pre">return_palette()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scspecies.html#module-scspecies.preprocessing">scspecies.preprocessing module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata"><code class="docutils literal notranslate"><span class="pre">create_mdata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.__init__"><code class="docutils literal notranslate"><span class="pre">create_mdata.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.compute_library_prior_params"><code class="docutils literal notranslate"><span class="pre">create_mdata.compute_library_prior_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.encode_batch_labels"><code class="docutils literal notranslate"><span class="pre">create_mdata.encode_batch_labels()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.filter_cells"><code class="docutils literal notranslate"><span class="pre">create_mdata.filter_cells()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.pred_labels_nns_hom_genes"><code class="docutils literal notranslate"><span class="pre">create_mdata.pred_labels_nns_hom_genes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.return_mdata"><code class="docutils literal notranslate"><span class="pre">create_mdata.return_mdata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.setup_target_adata"><code class="docutils literal notranslate"><span class="pre">create_mdata.setup_target_adata()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.subset_to_highly_variable_genes"><code class="docutils literal notranslate"><span class="pre">create_mdata.subset_to_highly_variable_genes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.create_mdata.translate_gene_list"><code class="docutils literal notranslate"><span class="pre">create_mdata.translate_gene_list()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.download_datasets"><code class="docutils literal notranslate"><span class="pre">download_datasets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.get_key"><code class="docutils literal notranslate"><span class="pre">get_key()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.map_homologs"><code class="docutils literal notranslate"><span class="pre">map_homologs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.map_homologs_silent"><code class="docutils literal notranslate"><span class="pre">map_homologs_silent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="scspecies.html#scspecies.preprocessing.set_random_seed"><code class="docutils literal notranslate"><span class="pre">set_random_seed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scspecies.html#module-scspecies">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Clemens Schächter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

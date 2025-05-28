@@ -1,0 +1,9 @@
+scspecies
+=========
+
+API Reference for the `scspecies` package.
+
+.. toctree::
+   :maxdepth: 4
+
+   scspecies

@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scspecies.preprocessing module &mdash; scspecies Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="scspecies.models module" href="scspecies.models.html" />
+    <link rel="prev" title="API Reference" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            scspecies
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Navigation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips to fit scSpecies</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">scspecies</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">scspecies.preprocessing module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/scspecies.preprocessing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scspecies-preprocessing-module">
+<h1>scspecies.preprocessing module<a class="headerlink" href="#scspecies-preprocessing-module" title="Link to this heading"></a></h1>
+<p>Functions and classes to setup datasets for scSpecies.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="scspecies.preprocessing.create_mdata">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scspecies.preprocessing.</span></span><span class="sig-name descname"><span class="pre">create_mdata</span></span><a class="reference internal" href="../_modules/scspecies/preprocessing.html#create_mdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scspecies.preprocessing.create_mdata" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Builder for MuData container that is used by scSpecies to align context &amp; target AnnData datasets.</p>
+<p>Handles downloading a gene-translation table from the mouse to human genome,
+preprocessing a “context” AnnData, and “target” AnnData from potentially multiple species, and saving the
+final MuData object.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="scspecies.preprocessing.create_mdata.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mouse'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NCBI_Taxon_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10090</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_top_genes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_non_zero_genes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.025</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_cell_type_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/scspecies/preprocessing.html#create_mdata.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scspecies.preprocessing.create_mdata.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize and preprocess the context dataset.</p>
+<p>Steps:</p>
+<ol class="arabic simple">
+<li><p>Onehot-encode experimental batchs.</p></li>
+<li><p>Calculate library size encoder prior parameters for scVI</p></li>
+<li><p>Subset to top HVGs and filter out cells with low expression patterns as well as rare cell types and batches (optionally).</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adata</strong> (<em>ad.AnnData</em>) – AnnData used as a context in scSpecies.</p></li>
+<li><p><strong>batch_key</strong> (<em>str</em>) – Observation key for experimental batch labels.</p></li>
+<li><p><strong>cell_key</strong> (<em>str</em>) – Observation key for cell-type annotation.</p></li>
+<li><p><strong>dataset_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Tag for the context dataset (default ‘mouse’).</p></li>
+<li><p><strong>NCBI_Taxon_ID</strong> (<em>int</em><em>, </em><em>optional</em>) – Taxonomy ID of the context species (default mouse - 10090).</p></li>
+<li><p><strong>n_top_genes</strong> (<em>int</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Number of HVGs to retain (None to skip) (default None).</p></li>
+<li><p><strong>min_non_zero_genes</strong> (<em>float</em><em>, </em><em>optional</em>) – Min fraction of nonzero genes per cell (default 0.025).</p></li>
+<li><p><strong>min_cell_type_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Min cells per cell-type, cell types with fewer samples are removed (default 20).</p></li>
+<li><p><strong>min_batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Min cells per batch for encoding, batch with fewer samples are removed (default 20).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Effects<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>- Ensures a `data/` directory exists.</strong></p></li>
+<li><p><strong>- Annotates `adata.uns[‘metadata’]` with context dataset info.</strong></p></li>
+<li><p><strong>- One-hot encodes batch labels, dropping any batches smaller than `min_batch_size`.</strong></p></li>
+<li><p><strong>- Computes per-batch library size prior parameters.</strong></p></li>
+<li><p><strong>- Subsets to top highly variable genes if `n_top_genes` is not None.</strong></p></li>
+<li><p><strong>- Filters out cells with low gene detection and rare cell-types.</strong></p></li>
+<li><p><strong>- Stores the processed AnnData in `self.dataset_collection`.</strong></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scspecies.preprocessing.create_mdata.return_mdata">
+<span class="sig-name descname"><span class="pre">return_mdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">return_mdata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('data')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mudata'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/scspecies/preprocessing.html#create_mdata.return_mdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scspecies.preprocessing.create_mdata.return_mdata" title="Link to this definition"></a></dt>
+<dd><p>Optionally save and/or return the assembled MuData object.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>return_mdata</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, return the MuData object at the end (default True).</p></li>
+<li><p><strong>save</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, write the MuData object to disk (default True).</p></li>
+<li><p><strong>save_path</strong> (<em>pathlib.Path</em><em>, </em><em>optional</em>) – Directory in which to save the file; created if missing (default Path(“data”)).</p></li>
+<li><p><strong>save_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Filename stem for the .h5mu file; ‘.h5mu’ is appended (default ‘mudata’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Effects<span class="colon">:</span></dt>
+<dd class="field-even"><ul>
+<li><p><strong>- If `save` is True</strong> –</p>
+<ul class="simple">
+<li><p>Ensures that <cite>save_path</cite> exists, creating it if necessary.</p></li>
+<li><p>Writes the MuData assembled from <cite>self.dataset_collection</cite> to</p></li>
+</ul>
+<p><cite>save_path/&lt;save_name&gt;.h5mu</cite>.
+- Prints messages about directory creation and file saving.</p>
+</li>
+<li><p><strong>- If `return_mdata` is True</strong> –</p>
+<ul class="simple">
+<li><p>Returns the MuData object constructed from <cite>self.dataset_collection</cite>.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">MuData</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scspecies.preprocessing.create_mdata.setup_target_adata">
+<span class="sig-name descname"><span class="pre">setup_target_adata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_nns_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'human'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NCBI_Taxon_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9606</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_top_genes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_log1p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nn_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/scspecies/preprocessing.html#create_mdata.setup_target_adata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scspecies.preprocessing.create_mdata.setup_target_adata" title="Link to this definition"></a></dt>
+<dd><p>Preprocess and align a target AnnData against the context.</p>
+<p>Steps:</p>
+<ol class="arabic simple">
+<li><p>Onehot-encode experimental batchs.</p></li>
+<li><p>Calculate library size encoder prior parameters for scVI</p></li>
+<li><p>Subset to top HVGs and filter out cells with low expression patterns as well as rare cell types and batches (optionally).</p></li>
+<li><p>Translate target gene symbols to context homologs.</p></li>
+<li><p>Compute and evaluate data-level nearest neighbors on the shared homologous gene set.</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adata</strong> (<em>ad.AnnData</em>) – Target dataset.</p></li>
+<li><p><strong>batch_key</strong> (<em>str</em>) – Observation key for experimental batch labels.</p></li>
+<li><p><strong>cell_key</strong> (<em>str</em><em> or </em><em>None</em>) – Observation key for cell types (None if unkown).</p></li>
+<li><p><strong>eval_nns_keys</strong> (<em>List</em><em> of </em><em>str</em><em> or </em><em>None</em>) – List of context dataset <cite>obs</cite> keys that should be transferred by scSpecies. Defaults to [cell_key].</p></li>
+<li><p><strong>dataset_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Defaults to ‘human’.</p></li>
+<li><p><strong>NCBI_Taxon_ID</strong> (<em>int</em><em>, </em><em>optional</em>) – Taxonomy ID for the target species (default human - 9606).</p></li>
+<li><p><strong>n_top_genes</strong> (<em>int</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Number of HVGs to keep (None to skip) (default None).</p></li>
+<li><p><strong>compute_log1p</strong> (<em>bool</em><em>, </em><em>optional</em>) – Use log1p counts for neighbor search if True (default True).</p></li>
+<li><p><strong>nn_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – Args for sklearn.neighbors.NearestNeighbors.
+Defaults to <cite>{‘n_neighbors’: 250, ‘metric’: ‘cosine’}</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Effects<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>- Updates `adata.uns[‘metadata’]` with target dataset info.</strong></p></li>
+<li><p><strong>- Filters and one-hot encodes batch (and cell-type, if provided).</strong></p></li>
+<li><p><strong>- Computes library size prior parameters.</strong></p></li>
+<li><p><strong>- Calls `translate_gene_list` to add translated gene symbols in the context genome to `var_names_transl`.</strong></p></li>
+<li><p><strong>- Subsets to HVGs if `n_top_genes` is not None.</strong></p></li>
+<li><p><strong>- Filters out low-coverage cells and rare cell-types.</strong></p></li>
+<li><p><strong>- Identifies intersecting homologous genes with the context and performs a nearest-neighbor search on log1p (or raw) counts.</strong></p></li>
+<li><p><strong>- Stores neighbor indices in `adata.obsm[‘ind_neigh_nns’]`.</strong></p></li>
+<li><p><strong>- Calculates the percentage of neighbor label agreement and transfers labels based on the data-level nearest neighbor search.</strong></p></li>
+<li><p><strong>- Inserts the processed AnnData into `self.dataset_collection`.</strong></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function" id="module-scspecies.preprocessing">
+<dt class="sig sig-object py" id="scspecies.preprocessing.download_datasets">
+<span class="sig-prename descclassname"><span class="pre">scspecies.preprocessing.</span></span><span class="sig-name descname"><span class="pre">download_datasets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/scspecies/preprocessing.html#download_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scspecies.preprocessing.download_datasets" title="Link to this definition"></a></dt>
+<dd><p>Download liver cell .h5ad datasets into ./data directory.
+Downloads each file and skips files already present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>requests.HTTPError</strong> – If any of the dataset URLs returns a bad status.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scspecies.preprocessing.set_random_seed">
+<span class="sig-prename descclassname"><span class="pre">scspecies.preprocessing.</span></span><span class="sig-name descname"><span class="pre">set_random_seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/scspecies/preprocessing.html#set_random_seed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scspecies.preprocessing.set_random_seed" title="Link to this definition"></a></dt>
+<dd><p>Fix all relevant RNG seeds for reproducibility.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>seed</strong> (<em>int</em>) – The seed value to use for Python, NumPy, random, and PyTorch.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scspecies.models.html" class="btn btn-neutral float-right" title="scspecies.models module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Clemens Schächter.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

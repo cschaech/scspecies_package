@@ -1,0 +1,46 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Sphinx build output
+docs/build/
+docs/_build/
+
+# IDE settings
+.vscode/
+.idea/
+
+# macOS Finder metadata
+.DS_Store
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Python test / coverage artifacts
+.coverage
+htmlcov/
+.tox/
+
+# Ignore your package's egg-info
+scspecies.egg-info/
+
+scspecies/__pycache__
+scspecies/tutorials/__pycache__
+scspecies/tutorials/data
+scspecies/tutorials/figures
+scspecies/tutorials/params
