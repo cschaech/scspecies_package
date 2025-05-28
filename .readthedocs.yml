@@ -10,10 +10,6 @@ sphinx:
 
 python:
   install:
-    # 1) Install your docs-only dependencies
-    - requirements: docs/requirements.txt
-
-    # 2) Install your package itself (so autodoc can import it)
-    - path: .
-      extra_requirements:
-        - docs
+    - method: pip
+      requirements: docs/requirements.txt
+    - path: . 
