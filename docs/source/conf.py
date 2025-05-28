@@ -7,9 +7,10 @@ PROJECT_ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 sys.path.insert(0, PROJECT_ROOT)
 
 autodoc_mock_imports = [
-    "torch", "muon", "scipy", "tqdm", "h5py", "gseapy", "mygene"
-]
-
+  "torch","muon","scipy","tqdm","h5py","gseapy","mygene",
+  "numpy","glasbey","pandas","matplotlib"]
+  
+  
 # -- Project information -----------------------------------------------------
 project = 'scspecies'
 author = 'Clemens Schächter'
