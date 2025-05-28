@@ -44,3 +44,5 @@ scspecies/tutorials/__pycache__
 scspecies/tutorials/data
 scspecies/tutorials/figures
 scspecies/tutorials/params
+
+tests
