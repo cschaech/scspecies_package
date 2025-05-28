@@ -22,28 +22,34 @@ release = '0.1.0'
 # -- General configuration ---------------------------------------------------
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',        # <- auto-generate summary tables
-    'sphinx.ext.viewcode',           # <- add “[source]” links
+    'sphinx.ext.autosummary',        
+    'sphinx.ext.viewcode',           
     'sphinx.ext.napoleon',
     'sphinx_autodoc_typehints',
     'nbsphinx',
     'jupyter_sphinx',
 ]
 
-autosummary_generate = True
+nbsphinx_download_link = True
 
+
+html_theme = "sphinx_rtd_theme"
+html_theme_options = {
+    "display_version": True,
+    "display_download_button": True,
+    "includehidden": True,
+}
+
+autosummary_generate = True
 autodoc_default_options = {
     'members': True,
     'undoc-members': True,
     'show-inheritance': True,
     'inherited-members': True,
 }
-
 templates_path = ['_templates']
 exclude_patterns = []
-
 autodoc_class_signature = 'separated'
-
 napoleon_custom_sections = [('Effects', 'params_style')] 
 
 # -- Options for HTML output -------------------------------------------------
