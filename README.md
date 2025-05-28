@@ -16,7 +16,7 @@ scSpecies defines two extras required to run the tutorial notebooks, **plotting*
     # Installs visualization libraries
     pip install scspecies[plotting]
 
-    # Notebook support. Installs Jupyter and related packages so you can run the example notebooks in the tutorials/ folder. 
+    # Notebook support. Installs Jupyter and related packages so you can run the example notebooks in the tutorials/ folder. Notebooks can be accessed via the package documentation or found in docs/source/tutorials via GitHub.
     pip install scspecies[notebooks]
 
     # All extras

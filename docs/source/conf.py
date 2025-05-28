@@ -35,8 +35,6 @@ nbsphinx_download_link = True
 
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {
-    "display_version": True,
-    "display_download_button": True,
     "includehidden": True,
 }
 
