@@ -1,6 +1,6 @@
 [project]
 name = "scspecies"
-version = "0.1.0"
+version = "0.1.1"
 description = "scspecies allows users to align latent representations of single-cell datasets from different species."
 readme = "README.md"
 long-description-content-type = "text/markdown"
