@@ -64,13 +64,8 @@ docs = [
 ]
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
 
-[tool.setuptools.packages.find]
-include = ["scspecies*"]
-exclude = [
-  "docs*",
-  "tests*",
-  "scspecies.egg-info*",
-]
+[tool.setuptools]
+packages = { find = { include = ["scspecies*"], exclude = ["docs*", "tests*", "scspecies.egg-info*"] } }
