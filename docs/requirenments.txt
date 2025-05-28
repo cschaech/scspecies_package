@@ -1,0 +1,4 @@
+sphinx>=8.0
+sphinx-rtd-theme
+myst-parser
+jupyter-sphinx

@@ -7,14 +7,10 @@ build:
     python: "3.11"
 
 sphinx:
-  # point this at your Sphinx conf.py
   configuration: docs/source/conf.py
 
 python:
   install:
-    # Install your package in editable mode,
-    # plus the `docs` optional-deps group for Sphinx & extensions.
+    - method: pip
+      requirements: docs/requirements.txt
     - path: .
-      method: pip
-      extra_requirements:
-        - docs
