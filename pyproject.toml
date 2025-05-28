@@ -2,19 +2,13 @@
 name = "scspecies"
 version = "0.1.0"
 description = "scspecies allows users to align latent representations of single-cell datasets from different species."
-readme = "README.md"
-long-description-content-type = "text/markdown"
-
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.11"
 license = { text = "MIT" }
 
 authors = [
   { name = "Clemens Schächter" },
 ]
-
-homepage      = "https://scspecies.readthedocs.io/"
-repository    = "https://github.com/cschaech/scspecies_package"
-documentation = "https://scspecies.readthedocs.io/"
 
 keywords = [
   "single-cell",
@@ -66,6 +60,11 @@ docs = [
 [build-system]
 requires = ["setuptools>=67", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage      = "https://scspecies.readthedocs.io/"
+Repository    = "https://github.com/cschaech/scspecies_package"
+Documentation = "https://scspecies.readthedocs.io/"
 
 [tool.setuptools]
 packages = { find = { include = ["scspecies*"], exclude = ["docs*", "tests*", "scspecies.egg-info*"] } }
