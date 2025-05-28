@@ -1,4 +1,3 @@
-# .readthedocs.yml
 version: 2
 
 build:
@@ -11,6 +10,10 @@ sphinx:
 
 python:
   install:
-    - method: pip
-      requirements: docs/requirements.txt
+    # 1) Install your docs-only dependencies
+    - requirements: docs/requirements.txt
+
+    # 2) Install your package itself (so autodoc can import it)
     - path: .
+      extra_requirements:
+        - docs
