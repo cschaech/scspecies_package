@@ -16,29 +16,18 @@ It’s best to install scSpecies in an isolated environment:
     source scspecies-env/bin/activate
 
     # Or using conda
-    conda create -n scspecies-env python=3.10
+    conda create -n scspecies-env python=3.11
     conda activate scspecies-env
 
 Install from PyPI
 -----------------
 
-To install the latest stable release of scSpecies run one of the following commands.
+To install the latest stable release of scSpecies run the following command.
 scSpecies defines two extras required to run the tutorial notebooks, **plotting** and **notebooks**.
 
 .. code-block:: bash
 
-    # Without extras
     pip install scspecies
-
-    # Plotting tools
-    pip install scspecies[plotting]
-
-    # Notebook support
-    pip install scspecies[notebooks]
-
-    # All extras
-    pip install scspecies[plotting,notebooks]
-
 
 After installation, confirm that scSpecies loads:
 
@@ -48,6 +37,6 @@ After installation, confirm that scSpecies loads:
 
 
 Tutorial
--------------------
+--------
 
-Start with the tutorial notebooks:
+Start with the tutorial notebooks. They can be downloaded from the `GitHub repository <https://github.com/cschaech/scspecies_package/tree/main/docs/source/tutorials>`_.

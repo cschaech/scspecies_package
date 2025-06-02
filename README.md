@@ -10,18 +10,7 @@ scSpecies defines two extras required to run the tutorial notebooks, **plotting*
 
 .. code-block:: bash
 
-    # Without extras
     pip install scspecies
-
-    # Installs visualization libraries
-    pip install scspecies[plotting]
-
-    # Notebook support. Installs Jupyter and related packages so you can run the example notebooks. Notebooks can be accessed via the package documentation or found in docs/source/tutorials via GitHub.
-    pip install scspecies[notebooks]
-
-    # All extras
-    pip install scspecies[plotting,notebooks]
-
 
 After installing,  confirm that scSpecies loads:
 
@@ -33,3 +22,7 @@ After installing,  confirm that scSpecies loads:
 
 Full API docs, tutorials, and examples are available at:
 [scSpecies Documentation (Read the Docs)](https://scspecies.readthedocs.io/en/latest/)
+
+# Tutorial Notebooks s
+
+Notebooks can be accessed via the package documentation or found in the folder docs/source/tutorials via GitHub.

@@ -1,6 +1,6 @@
 [project]
 name = "scspecies"
-version = "0.1.1"
+version = "0.1.2"
 description = "scspecies allows users to align latent representations of single-cell datasets from different species."
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.11"
@@ -34,15 +34,9 @@ dependencies = [
   "scipy (>=1.15.3,<2.0.0)",
   "tqdm (>=4.67.1,<5.0.0)",
   "h5py (>=3.13.0,<4.0.0)",
-]
-
-[project.optional-dependencies]
-plotting = [
   "seaborn (>=0.13.2,<1.0.0)",
   "glasbey (>=0.2.1,<1.0.0)",
   "matplotlib (>=3.10.1,<4.0.0)",
-]
-notebooks = [
   "ipywidgets (>=8.1.7,<9.0.0)",
   "ipykernel (>=6.29.5,<7.0.0)",
   "tqdm (>=4.67.1,<5.0.0)",
@@ -50,6 +44,7 @@ notebooks = [
   "gseapy (>=1.1.8,<4.0.0)",
   "mygene (>=3.2.2,<4.0.0)",
 ]
+
 docs = [
   "sphinx>=8.2",
   "sphinx-rtd-theme>=1.0",
