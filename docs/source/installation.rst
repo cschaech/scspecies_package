@@ -2,7 +2,7 @@
 Installation
 ============
 
-**scSpecies** requires **Python 3.10** or higher.
+**scSpecies** requires **Python 3.11** or higher.
 
 Virtual environment
 -------------------
@@ -15,7 +15,7 @@ It’s best to install scSpecies in an isolated environment:
     python3 -m venv scspecies-env
     source scspecies-env/bin/activate
 
-    # Or using conda
+    # Using conda
     conda create -n scspecies-env python=3.11
     conda activate scspecies-env
 
@@ -35,7 +35,7 @@ After installation, confirm that scSpecies loads:
     python -c "import scspecies; print(scspecies.__version__)"
 
 
-Tutorial
---------
+Tutorial notebooks
+------------------
 
 Start with running the tutorial notebooks. They can be downloaded from the `GitHub repository <https://github.com/cschaech/scspecies_package/tree/main/docs/source/tutorials>`_.
