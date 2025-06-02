@@ -1,26 +1,16 @@
 from typing import Union, Optional, List
-from collections import Counter
 from pathlib import Path
-from tqdm.auto import tqdm
 import numpy as np
 import scanpy as sc
 import pandas as pd
 import anndata as ad
 import muon as mu
-import torch
-import random
-import h5py
-import pandas as pd
-import io
-import os
-import tempfile
-import requests
-from scipy.sparse import csr_matrix
+from collections import Counter
+import io, os, requests, contextlib, torch, random
 from mygene import MyGeneInfo
-import contextlib
-
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.neighbors import NearestNeighbors
+from scipy.sparse import csr_matrix
 
 
 def map_homologs(
@@ -295,6 +285,7 @@ class create_mdata():
         - Filters out cells with low gene detection and rare cell-types.
         - Stores the processed AnnData in `self.dataset_collection`.
         """        
+        adata = adata.copy()
 
         mu.set_options(pull_on_update=False)
 
@@ -306,6 +297,7 @@ class create_mdata():
         out_dir.mkdir(parents=True, exist_ok=True)
 
         self.context_dataset_name = dataset_name
+        self.context_cell_key = cell_key
         self.context_NCBI_Taxon_ID = NCBI_Taxon_ID
         
         if adata.isbacked:
@@ -323,10 +315,10 @@ class create_mdata():
         adata.obs.index = adata.obs.index.astype(str) + f"_{dataset_name}"        
 
         adata = self.encode_batch_labels(adata, self.min_batch_size)
-        adata = self.compute_library_prior_params(adata)     
+        adata = self.compute_lib_prior_params(adata)     
         
         if n_top_genes != None:
-            adata = self.subset_to_highly_variable_genes(adata, n_top_genes)
+            adata = self.subset_to_hvg(adata, n_top_genes)
 
         adata = self.filter_cells(adata, self.min_non_zero_genes, self.min_cell_type_size)
 
@@ -399,6 +391,8 @@ class create_mdata():
         - Inserts the processed AnnData into `self.dataset_collection`.        
         """
 
+        adata = adata.copy()
+
         adata.uns['metadata'] = {
             'name': dataset_name,            
             'batch_key': batch_key,
@@ -407,14 +401,17 @@ class create_mdata():
             'function': 'target',                  
         }
 
+        if cell_key == None:   
+            adata.uns['metadata']['cell_key'] = 'unknown'
+
         adata.obs['dataset'] = dataset_name
         adata.obs.index = adata.obs.index.astype(str) + f"_{dataset_name}"        
 
         adata = self.encode_batch_labels(adata, self.min_batch_size)
-        adata = self.compute_library_prior_params(adata)           
+        adata = self.compute_lib_prior_params(adata)           
 
         if n_top_genes != None:
-            adata = self.subset_to_highly_variable_genes(adata, n_top_genes)
+            adata = self.subset_to_hvg(adata, n_top_genes)
 
         adata = self.filter_cells(adata, self.min_non_zero_genes, self.min_cell_type_size)
 
@@ -435,7 +432,6 @@ class create_mdata():
         else:
             print("Found \033[35m{}\033[0m shared homologous genes between context and target dataset".format(str(len(context_ind))))
 
-
         print('Perform the data-level nearest neigbor search on the homologous gene set.')    
 
         if compute_log1p:
@@ -450,12 +446,10 @@ class create_mdata():
         neigh.fit(context_neigh)
 
         _, indices_whole = neigh.kneighbors(target_neigh)
-        indices_whole = np.squeeze(indices_whole)
-
-        adata.obsm['ind_neigh_nns'] = indices_whole.astype(np.int32)
+        adata.obsm['ind_neigh_nns'] = np.squeeze(indices_whole).astype(np.int32)
 
         if eval_nns_keys == None:
-            eval_nns_keys = [cell_key]
+            eval_nns_keys = [self.context_cell_key]
         adata = self.pred_labels_nns_hom_genes(adata, eval_nns_keys)
 
         self.dataset_collection[dataset_name] = adata
@@ -554,7 +548,7 @@ class create_mdata():
         cell_key = adata.uns['metadata']['cell_key']        
         sc.pp.filter_cells(adata, min_genes=adata.n_vars*min_non_zero_genes)
 
-        if cell_key != None:
+        if cell_key != 'unknown':
             cell_type_counts = adata.obs[cell_key].value_counts()>min_cell_type_size
             cell_type_counts = cell_type_counts[cell_type_counts==True].index
             adata = adata[adata.obs[cell_key].isin(cell_type_counts)]    
@@ -563,7 +557,7 @@ class create_mdata():
         return adata        
 
     @staticmethod
-    def compute_library_prior_params(
+    def compute_lib_prior_params(
             adata: ad.AnnData
         ) -> ad.AnnData:
         
@@ -632,19 +626,31 @@ class create_mdata():
 
         context_adata = self.dataset_collection[self.context_dataset_name]
 
+
         for context_label_key in context_label_keys:
             print('Evaluating data level NNS and calculating cells with the highest agreement for context labels key {}.'.format(context_label_key))
 
-            ind_neigh = adata.obsm['ind_neigh_nns']  
-            ind_neigh = ind_neigh[:,:k]
-            context_labels = context_adata.obs[context_label_key].to_numpy()
+            ind_neigh_topk = adata.obsm['ind_neigh_nns'][:,:k]
+            candidate_labels = context_adata.obs[context_label_key].to_numpy()[ind_neigh_topk]
 
-            label_counts = [dict(Counter(context_labels[ind_neigh[i]])) for i in range(np.shape(ind_neigh)[0])]
+            #pred_count = np.array([(lambda u, c: (u[np.argmax(c)], c[np.argmax(c)]))(*np.unique(c_l, return_counts=True)) for c_l in candidate_labels])
+
+            #cts, ct_counts = np.unique(pred_count[:, 0], return_counts=True)
+            #for ct, ct_count in zip(cts, ct_counts):
+            #    ind = (pred_count == ct)[:, 0]
+            #    acc, acc_counts = np.unique(pred_count[ind][:, 1].astype(int), return_counts=True)
+            #    lookup = dict(zip(acc, np.cumsum(acc_counts)/ct_count))
+            #    pred_count[ind, 1] = np.vectorize(lookup.get)(pred_count[ind, 1].astype(np.int32))
+
+            #adata.obs['top_percent_'+context_label_key] = pred_count[:, 1].astype(np.float32)
+            #adata.obs['pred_nns_'+context_label_key] = pred_count[:, 0]
+
+            label_counts = [dict(Counter(candidate_labels[ind_neigh_topk[i]])) for i in range(adata.n_obs)]
             top_dict = {}
 
-            label_counts = [max(label_counts[i].items(), key=lambda x: x[1]) + (i, ) for i in range(np.shape(ind_neigh)[0])]
+            label_counts = [max(label_counts[i].items(), key=lambda x: x[1]) + (i, ) for i in range(adata.n_obs)]
 
-            top_dict = {c: [] for c in np.unique(context_labels)}
+            top_dict = {c: [] for c in np.unique(candidate_labels)}
             for i in range(len(label_counts)):
                 top_dict[label_counts[i][0]] += [label_counts[i]]
 
@@ -657,7 +663,9 @@ class create_mdata():
 
             adata.obs['top_percent_'+context_label_key] = np.array([label_counts[i][-1] for i in range(len(label_counts))])
             adata.obs['pred_nns_'+context_label_key] = np.array([label_counts[i][0] for i in range(len(label_counts))])
+
         return adata    
+
 
     @staticmethod
     def encode_batch_labels(
@@ -703,7 +711,7 @@ class create_mdata():
 
         adata.obsm['batch_label_enc'] = enc.transform(batch_labels).toarray().astype(np.float32) 
 
-        if cell_key == None:
+        if cell_key == 'unknown':
             batch_dict = {'unknown': enc.transform(np.unique(batch_labels).reshape(-1, 1)).toarray().astype(np.float32)}
         else:
             cell_types = adata.obs[cell_key].cat.categories.to_numpy()
@@ -718,7 +726,7 @@ class create_mdata():
 
 
     @staticmethod
-    def subset_to_highly_variable_genes(
+    def subset_to_hvg(
             adata: ad.AnnData,                                       
             n_top_genes: int,
         ) -> ad.AnnData:
@@ -752,17 +760,8 @@ class create_mdata():
             flavor='seurat_v3',
         )
 
-        adata.X = adata.layers['raw_counts'].copy()#.toarray()
+        adata.X = adata.layers['raw_counts'].copy()
         del adata.layers['raw_counts']        
-        
-        #del adata.var['highly_variable_intersection']
-        #del adata.var['dispersions_norm']
-        #del adata.var['dispersions']
-        #del adata.var['means']
-        #del adata.var['highly_variable']
-        #del adata.var['highly_variable_nbatches']       
-        #del adata.uns['log1p']
-        #del adata.uns['hvg'] 
 
         return adata
 

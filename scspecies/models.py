@@ -1,22 +1,22 @@
 import numpy as np
 import pandas as pd
 import muon as mu
+import anndata as ad
+
 import torch
-from torch import nn
 import torch.nn.functional as F
+from torch import nn
 from torch.distributions.normal import Normal
-from typing import Optional, Sequence, Union, Tuple, Dict
-import sys
-import time
+
+import time, os, pickle
+from typing import Optional, Sequence, Union, Tuple, Dict, List
 from datetime import timedelta
-import os
-import pickle
-from typing import Union, List, Optional
+
 from sklearn.metrics import balanced_accuracy_score
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import OneHotEncoder
 from scipy.stats import chi2
-import anndata as ad
+from scipy.sparse import csr_matrix
 
 
 def create_structure(
@@ -1145,7 +1145,7 @@ class scSpecies():
         values, counts = np.unique(arr, return_counts=True)
         return values[np.argmax(counts)]
 
-    def transfer_info(
+    def transfer_labels_cell(
             self,     
             target_ind: int,
             context_obs_transfer: Union[List[str], str],
@@ -1168,6 +1168,7 @@ class scSpecies():
         DataFrame
             Context labels, source indices, and similarity scores with the specified target cell.
         """
+
         if isinstance(context_obs_transfer, str):
             context_obs_transfer = [context_obs_transfer]
 
@@ -1364,9 +1365,9 @@ class scSpecies():
         similarities = self.similarity_metric(target_ind, context_ind, b_s=None, b_sc=None)
         return similarities, context_ind
 
-    def label_transfer(    
+    def transfer_labels_data(    
             self,
-            context_obs_keys: Sequence[str],
+            context_obs_transfer: Union[List[str], str],
             top_neigh: int = 25,
             write_sim: bool = False
             ):
@@ -1374,14 +1375,15 @@ class scSpecies():
         """
         Assign context-derived labels via similarity scores to each target cell by majority vote among its top candidates.
 
-        For each observation key in `context_obs_keys`, finds the `top_neigh` most similar context
+        For each observation key in `context_obs_transfer`, finds the `top_neigh` most similar context
         cells (based on decoder likelihood in latent space), takes the most frequent label among
         those neighbors, and writes it into `self.mdata.mod[target_key].obs['pred_sim_<obs_key>']`.
+        When target cell annotation is unknown, the inferred values of the last entry in `context_obs_transfer` will serve as a replacement for target cell annotation in downstream analyses.
 
         Parameters
         ----------
-        context_obs_keys : sequence of str
-            One or more keys in `self.mdata.mod[context_key].obs` whose values to transfer.
+        context_obs_transfer : List of str or str
+            One or more keys in `self.mdata.mod[context_key].obs` whose values to transfer. 
         top_neigh : int, default=25
             Number of nearest neighbors to consider for the majority vote.
         write_sim : bool, default=False
@@ -1389,18 +1391,26 @@ class scSpecies():
             `self.mdata.mod[target_key].obsm['similarities']` and
             `['similarities_ind']`.
         """
+        target_key = self.target_config['target_key']
 
         similarities, context_ind = self.similarity_metric_on_latent_space()
+                    
+        if isinstance(context_obs_transfer, str):
+            context_obs_transfer = [context_obs_transfer]
 
         if write_sim == True:
-            self.mdata.mod[self.target_config['target_key']].obsm['similarities'] = pred_labels 
-            self.mdata.mod[self.target_config['target_key']].obsm['similarities_ind'] = context_ind 
+            self.mdata.mod[target_key].obsm['similarities'] = pred_labels 
+            self.mdata.mod[target_key].obsm['similarities_ind'] = context_ind 
 
-        for obs_key in context_obs_keys:
+        for obs_key in context_obs_transfer:
             context_labels = self.mdata.mod[self.context_config['context_key']].obs[obs_key].to_numpy()
-            target_n_obs = self.mdata.mod[self.target_config['target_key']].n_obs
+            target_n_obs = self.mdata.mod[target_key].n_obs
             pred_labels = np.stack([self.most_frequent(context_labels[context_ind[i][np.argsort(similarities[i])]][:top_neigh]) for i in range(target_n_obs)])
-            self.mdata.mod[self.target_config['target_key']].obs['pred_sim_'+obs_key] = pred_labels 
+            self.mdata.mod[target_key].obs['pred_sim_'+obs_key] = pred_labels 
+
+        if self.mdata.mod[target_key].uns['metadata']['cell_key'] == 'unknown':
+            self.mdata.mod[target_key].uns['metadata']['cell_key_transferred'] = context_obs_transfer[-1]
+            print(f'Set {context_obs_transfer[-1]} as target cell key for downstream analyses.')
 
     @staticmethod
     def average_slices(    
@@ -1524,8 +1534,12 @@ class scSpecies():
         context_batch_key = self.mdata.mod[context_key].uns['metadata']['batch_key']
         target_batch_key = self.mdata.mod[target_key].uns['metadata']['batch_key']   
 
-        if target_cell_key == None:
-            raise ValueError(f"Target cell labels must be known or transferred from the context dataset first and provided as function input.") 
+        if target_cell_key == 'unknown':
+            if 'cell_key_transferred' in self.mdata.mod[target_key].uns['metadata'].keys():
+                target_cell_key = self.mdata.mod[target_key].uns['metadata']['cell_key_transferred']
+                print(f'Use inferred context labels in {target_cell_key} for similarity calculation.')
+            else:    
+                raise ValueError(f"Target cell labels must be known or transferred from the context dataset via `label_transfer`.") 
 
         context_cell_labels = self.mdata.mod[context_key].obs[context_cell_key].to_numpy()
         context_cell_types = np.unique(context_cell_labels)
@@ -1668,8 +1682,12 @@ class scSpecies():
         context_batch_key = self.mdata.mod[context_key].uns['metadata']['batch_key']
         target_batch_key = self.mdata.mod[target_key].uns['metadata']['batch_key']    
 
-        if target_cell_key == None:
-            raise ValueError(f"Target cell labels must be known or transferred from the context dataset first and provided as function input.") 
+        if target_cell_key == 'unknown':
+            if 'cell_key_transferred' in self.mdata.mod[target_key].uns['metadata'].keys():
+                target_cell_key = self.mdata.mod[target_key].uns['metadata']['cell_key_transferred']
+                print(f'Use inferred context labels in {target_cell_key} for differential gene expression analysis.')
+            else:    
+                raise ValueError(f"Target cell labels must be known or transferred from the context dataset via `label_transfer`.") 
 
         self.context_decoder.eval()   
         self.target_decoder.eval()    
@@ -1872,11 +1890,18 @@ class scSpecies():
         context_key = self.context_config['context_key']
         target_key = self.target_config['target_key']
 
-        cell_key_context = self.mdata.mod[context_key].uns['metadata']['cell_key']
-        cell_key_target = self.mdata.mod[target_key].uns['metadata']['cell_key']
+        context_cell_key = self.mdata.mod[context_key].uns['metadata']['cell_key']
+        target_cell_key = self.mdata.mod[target_key].uns['metadata']['cell_key']
 
-        cells_context = self.mdata.mod[context_key].obs[cell_key_context]
-        cells_target = self.mdata.mod[target_key].obs[cell_key_target]
+        if target_cell_key == 'unknown':
+            if 'cell_key_transferred' in self.mdata.mod[target_key].uns['metadata'].keys():
+                target_cell_key = self.mdata.mod[target_key].uns['metadata']['cell_key_transferred']
+                print(f'Use inferred context labels in {target_cell_key} for similarity calculation.')
+            else:    
+                raise ValueError(f"Target cell labels must be known or transferred from the context dataset via `label_transfer`.") 
+
+        cells_context = self.mdata.mod[context_key].obs[context_cell_key]
+        cells_target = self.mdata.mod[target_key].obs[target_cell_key]
 
         cell_types_context = np.unique(cells_context)
         cell_types_target = np.unique(cells_target)
@@ -1885,6 +1910,12 @@ class scSpecies():
 
         for i in range(len(cell_types_target)):
             for j in range(len(cell_types_context)):
+                print('\r{}/{} Similarity calculation for the {}-{} pair'.format(
+                    str(i * len(cell_types_context) + j + 1), 
+                    str(len(cell_types_target) * len(cell_types_context)),
+                    cell_types_target[i],
+                    cell_types_context[j]
+                ), end=' '*25, flush=True)
 
                 target_ind = np.where(cells_target == cell_types_target[i])[0]
                 target_ind = np.random.choice(target_ind, size=min(max_sample_targ, np.shape(target_ind)[0]), replace=False)  
@@ -2064,7 +2095,7 @@ class scSpecies():
         save_key : str, default=''
             Suffix for saved files.
         """
-        target_cell_key=self.mdata.mod[self.target_config['target_key']].uns['metadata']['cell_key']
+        context_cell_key=self.mdata.mod[self.context_config['context_key']].uns['metadata']['cell_key']
 
         n_obs = self.mdata.mod[self.target_config['target_key']].n_obs
         k_neigh = self.target_config['k_neigh']
@@ -2109,8 +2140,9 @@ class scSpecies():
                 else:    
                     l_batch = x_batch.sum(-1).unsqueeze(-1)
                         
-                nlog_likeli = self.target_decoder(z_batch, s_batch, l_batch, x_batch)                    
-                ind_top = np.where(batch_adata.obs['top_percent_'+target_cell_key].to_numpy()<top_percent/100)[0]  
+                nlog_likeli = self.target_decoder(z_batch, s_batch, l_batch, x_batch)               
+   
+                ind_top = np.where(batch_adata.obs['top_percent_'+context_cell_key].to_numpy()<top_percent/100)[0]  
                 if np.shape(ind_top)[0] < 1: ind_top = np.reshape(np.random.randint(self.config_dict['b_s']), (1,))
 
                 ind_neigh = batch_adata.obsm['ind_neigh_nns'][ind_top, :k_neigh]
