@@ -39,17 +39,17 @@ dependencies = [
   "matplotlib (>=3.10.1,<4.0.0)",
   "ipywidgets (>=8.1.7,<9.0.0)",
   "ipykernel (>=6.29.5,<7.0.0)",
-  "tqdm (>=4.67.1,<5.0.0)",
   "jupyter (>=1.1.1,<2.0.0)",
   "gseapy (>=1.1.8,<4.0.0)",
   "mygene (>=3.2.2,<4.0.0)",
 ]
 
+[project.optional-dependencies]
 docs = [
   "sphinx>=8.2",
   "sphinx-rtd-theme>=1.0",
   "myst-parser>=0.21",
-  "jupyter-sphinx>=0.3",
+  "jupyter-sphinx>=0.3"
 ]
 
 [build-system]
