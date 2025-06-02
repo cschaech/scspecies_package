@@ -23,7 +23,6 @@ Install from PyPI
 -----------------
 
 To install the latest stable release of scSpecies run the following command.
-scSpecies defines two extras required to run the tutorial notebooks, **plotting** and **notebooks**.
 
 .. code-block:: bash
 
@@ -39,4 +38,4 @@ After installation, confirm that scSpecies loads:
 Tutorial
 --------
 
-Start with the tutorial notebooks. They can be downloaded from the `GitHub repository <https://github.com/cschaech/scspecies_package/tree/main/docs/source/tutorials>`_.
+Start with running the tutorial notebooks. They can be downloaded from the `GitHub repository <https://github.com/cschaech/scspecies_package/tree/main/docs/source/tutorials>`_.

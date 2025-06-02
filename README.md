@@ -23,6 +23,6 @@ After installing,  confirm that scSpecies loads:
 Full API docs, tutorials, and examples are available at:
 [scSpecies Documentation (Read the Docs)](https://scspecies.readthedocs.io/en/latest/)
 
-# Tutorial Notebooks s
+## Tutorial Notebooks
 
-Notebooks can be accessed via the package documentation or found in the folder docs/source/tutorials via GitHub.
+Start with running the tutorial notebooks. They can be downloaded from the [GitHub repository](https://github.com/cschaech/scspecies_package/tree/main/docs/source/tutorials).
