@@ -21,5 +21,4 @@ Tips to fit scSpecies
 
 10) When gene symbols / IDs are found to have no overlap by the package `mygene`, match symbols manually, e.g. by mapping them to the mouse or human genome. 
 
-11) Potential misalignment of homologous cell types can stem from two sources: First, the cell type is predominantly mismatched by the data-level nearest neighbor search (such as Hepatocytes in the tutorial notebooks). For such cell types perform the nearest neighbor search on a shared gene set that more specifically contains marker genes or use a more sophisticated metric than cosine similarity.
-Second, if the cell type is severely underrepresented in either the context or target dataset. For underrepresented context cell types refer to Tip 8.
+11) Potential misalignment of homologous cell types can stem from two sources: First, the cell type is predominantly mismatched by the data-level nearest neighbor search (such as Hepatocytes in the tutorial notebooks). For such cell types perform the nearest neighbor search on a shared gene set that more specifically contains marker genes or use a more sophisticated metric than cosine similarity. Second, if the cell type is severely underrepresented in either the context or target dataset. For underrepresented context cell types refer to Tip 8.
