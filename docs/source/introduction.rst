@@ -5,7 +5,7 @@
 Introduction
 ============
 
-The workflow and applications of **scSpecies** are demonstrated in five tutorial notebooks, covering dataset preprocessing, architecture alignment, annotation transfer, differential gene expression analysis, and atlas creation across species.
+The workflow and applications of **scSpecies** are demonstrated in two tutorial notebooks, covering dataset preprocessing, architecture alignment, annotation transfer, differential gene expression analysis, and atlas creation across species.
 
 
 .. figure:: _static/scSpecies_model_architecture.png
@@ -24,7 +24,7 @@ Key functionalities of scSpecies
 
 2) **Compute cell similarity scores:**  
    
-   scSpecies defines a similarity metric that establishes a direct correspondence between cells of different datasets and ranks cells by similarity across species. 
+   scSpecies defines a similarity metric that establishes a direct correspondence between cells of different datasets and can quantify similarity of cells across species. 
 
 3) **Transfer cell annotation between species:**  
    
