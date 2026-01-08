@@ -69,11 +69,11 @@ Datasets must meet the following criteria:
 Preprint
 --------
 
-The preprint describing the methodology of **scSpecies** is available at:  
+The methodology of **scSpecies** is available at:  
 
 Clemens Schächter, Martin Treppner, Maren Hackenberg, Hanne Raum, Joschka Boedecker, Harald Binder (2024).  
-*Enhancement of Network Architecture Alignment in Comparative Single-Cell Studies*. Qeios.  
-`doi:10.32388/D37AFF <https://doi.org/10.32388/D37AFF>`_
+*scSpecies: enhancement of Network Architecture Alignment in Comparative Single-Cell Studies*. Genome Biology.  
+`doi:10.1186/s13059-025-03866-2 <https://doi.org/10.1186/s13059-025-03866-2>`_
 
 
 Funding
