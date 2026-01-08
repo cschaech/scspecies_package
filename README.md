@@ -17,6 +17,7 @@ After installing,  confirm that scSpecies loads:
 .. code-block:: bash
 
     python -c "import scspecies; print(scspecies.__version__)"
+
     
 ## Documentation 
 
@@ -26,3 +27,8 @@ Full API docs, tutorials, and examples are available at:
 ## Tutorial Notebooks
 
 Start with running the tutorial notebooks. They can be downloaded from the [GitHub repository](https://github.com/cschaech/scspecies_package/tree/main/docs/source/tutorials).
+
+## Publication
+
+The corresponding methodological paper is published in Genome Biology (2025):
+“scSpecies: enhancement of network architecture alignment in comparative single-cell studies”, DOI: 10.1186/s13059-025-03866-2.  
